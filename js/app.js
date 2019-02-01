@@ -1,8 +1,13 @@
-// 这是我们的玩家要躲避的敌人 
+// 这是我们的玩家要躲避的敌人
+/**
+* @description 甲虫类
+*/ 
 var Enemy = function() {
     // 要应用到每个敌人的实例的变量写在这里
     // 我们已经提供了一个来帮助你实现更多
-
+    this.initalPositionX = -101;
+    this.initalPositionY = parseInt(Math.random() * 3 + 1) * 83 - 20;
+    this.moveSpeed = Math.random()*200+200;
     // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
     this.sprite = 'images/enemy-bug.png';
 };
