@@ -105,6 +105,31 @@ Rock.prototype.update = function() {
         this.initalPositionY = parseInt(Math.random() * 3 + 1) * 83 - 45;
     }
 };
+
+// From https://blog.csdn.net/xiaohxx/article/details/80657979
+/**
+* @description 碰撞监测函数
+* @param {int} x - 左上角x值
+* @param {int} y - 左上角y值
+* @param {int} w - 矩形宽
+* @param {int} x - 矩形高
+*/
+function rectangleCol(x1,y1,w1,h1,x2,y2,w2,h2){
+            var maxX,maxY,minX,minY;
+
+
+            maxX = x1+w1 >= x2+w2 ? x1+w1 : x2+w2;
+            maxY = y1+h1 >= y2+h2 ? y1+h1 : y2+h2;
+            minX = x1 <= x2 ? x1 : x2;
+            minY = y1 <= y2 ? y1 : y2;
+
+
+            if(maxX - minX < w1+w2 && maxY - minY < h1+h2){
+              return true;
+            }else{
+              return false;
+            }
+}
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
