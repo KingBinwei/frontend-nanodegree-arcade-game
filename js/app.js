@@ -81,6 +81,30 @@ Player.prototype.handleInput = function(key) {
         this.initalPositionY +=  83;
     }
 };
+
+/**
+* @description 石块类
+*/
+var Rock = function() {
+    this.initalPositionX = 3 * 101;
+    this.initalPositionY = parseInt(Math.random() * 3 + 1) * 83 - 45;
+    this.sprite = 'images/Rock.png';
+}
+/**
+* @description 根据石块坐标绘制甲虫
+*/
+Rock.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.initalPositionX, this.initalPositionY);
+};
+/**
+* @description 更新石块位置
+*/
+Rock.prototype.update = function() {
+    if (player.initalPositionY < 41.5) {
+        this.initalPositionX = 3 * 101;
+        this.initalPositionY = parseInt(Math.random() * 3 + 1) * 83 - 45;
+    }
+};
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
