@@ -28,7 +28,7 @@ Enemy.prototype.update = function(dt) {
         player.initalPositionX = 202;
         player.initalPositionY = 373.5;
     }
-    /
+    
 };
 
 // 此为游戏必须的函数，用来在屏幕上画出敌人，
