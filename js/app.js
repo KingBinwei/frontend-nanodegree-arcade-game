@@ -47,7 +47,16 @@ var Player = function() {
     this.initalPositionY = 373.5;
     this.sprite = 'images/char-boy.png';
 }
-
+/**
+* @description 更新玩家坐标
+* param {int} dt - 刷新时间
+*/
+Player.prototype.update = function(dt) {
+    if (this.initalPositionY < 41.5) {
+        this.initalPositionX = 202;
+        this.initalPositionY = 373.5;
+    }
+};
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
