@@ -63,6 +63,24 @@ Player.prototype.update = function(dt) {
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.initalPositionX, this.initalPositionY);
 };
+/**
+* @description 根据键盘事件更新玩家坐标
+** @param {string} key - 键盘监听器返回值
+*/
+Player.prototype.handleInput = function(key) {
+    if (key == "left" && this.initalPositionX >= 101) {
+        this.initalPositionX -=  101;
+    } 
+    if (key == "right" && this.initalPositionX <= 303) {
+        this.initalPositionX +=  101;
+    }
+    if (key == "up" && this.initalPositionY > -41.5) {
+        this.initalPositionY -=  83;
+    } 
+    if (key == "down" && this.initalPositionY < 332) {
+        this.initalPositionY +=  83;
+    }
+};
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
