@@ -38,7 +38,15 @@ Enemy.prototype.render = function() {
 
 // 现在实现你自己的玩家类
 // 这个类需要一个 update() 函数， render() 函数和一个 handleInput()函数
+/**
+* @description 玩家类
+*/
 
+var Player = function() {
+    this.initalPositionX = 202;
+    this.initalPositionY = 373.5;
+    this.sprite = 'images/char-boy.png';
+}
 
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
