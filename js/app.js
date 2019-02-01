@@ -33,7 +33,7 @@ Enemy.prototype.update = function(dt) {
 
 // 此为游戏必须的函数，用来在屏幕上画出敌人，
 Enemy.prototype.render = function() {
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.initalPositionX, this.initalPositionY);
 };
 
 // 现在实现你自己的玩家类
