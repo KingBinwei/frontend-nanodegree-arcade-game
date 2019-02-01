@@ -15,6 +15,13 @@ var Enemy = function() {
 // 此为游戏必须的函数，用来更新敌人的位置
 // 参数: dt ，表示时间间隙
 Enemy.prototype.update = function(dt) {
+    this.initalPositionX += this.moveSpeed * dt; 
+    if (this.initalPositionX >= 505 || (this.initalPositionX >= rock.initalPositionX - 101 && this.initalPositionY + 20 == rock.initalPositionY + 45)) {
+        this.initalPositionX = -101;
+        this.initalPositionY = parseInt(Math.random() * 3 + 1) * 83 - 20;
+        this.moveSpeed = Math.random()*200+200;
+        this.initalPositionX += this.moveSpeed * dt;
+    }
     // 你应该给每一次的移动都乘以 dt 参数，以此来保证游戏在所有的电脑上
     // 都是以同样的速度运行的
 };
