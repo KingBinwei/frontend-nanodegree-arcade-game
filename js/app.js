@@ -55,6 +55,7 @@ Player.prototype.update = function(dt) {
     if (this.initalPositionY < 41.5) {
         this.initalPositionX = 202;
         this.initalPositionY = 373.5;
+        alert("游戏胜利，点击确认重新开始游戏!");
     }
 };
 /**
